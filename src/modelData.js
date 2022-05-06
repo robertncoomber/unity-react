@@ -16,7 +16,5 @@ let data2 = {
     currentPage: "Control",
 };
 
-let data = data1;
-
 export default data1;
 export { data2 };

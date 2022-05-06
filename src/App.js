@@ -1,4 +1,3 @@
-import ListButton from "./ListButton";
 import data1, { data2 } from "./modelData";
 import List from "./List";
 import Control from "./Control";
@@ -20,12 +19,19 @@ function App() {
 
     // set add event listener and move event listener in here
     useEffect(() => {
-        window.vuplex.addEventListener("message", listener);
+        console.log(window);
+
+        if (window.vuplex === null) {
+            console.error("vuplex not defined");
+        } else {
+            console.log("vuplex loaded properly");
+            window.vuplex?.addEventListener("message", listener);
+        }
 
         return () => {
-            window.vuplex.removeEventListener("message", listener);
+            window.vuplex?.removeEventListener("message", listener);
         };
-    }, []);
+    });
 
     return (
         <div>

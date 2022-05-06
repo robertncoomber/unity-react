@@ -1,5 +1,3 @@
-import ListButton from "./ListButton";
-
 function List(props) {
     const buttons = props.buttons;
     const listItems = buttons.map((button) => (
@@ -14,10 +12,6 @@ function List(props) {
     ));
 
     return <div>{listItems}</div>;
-}
-
-function testfunc(e) {
-    console.log(e.Value);
 }
 
 function sendMessage(type, message) {
